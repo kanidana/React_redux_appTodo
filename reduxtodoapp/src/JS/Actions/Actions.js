@@ -5,9 +5,10 @@ export const addtask = (task) => ({
     payload: task
 })
 
+
 export const updatetask = (id , description) => ({
     type: UPDATE_TASK,
-    payload: {id , description}
+    payload: {id , ...description}
 })
 
 export const filtertask = (filter) => ({

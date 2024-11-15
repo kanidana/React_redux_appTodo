@@ -2,7 +2,7 @@ import { ADD_TASK, UPDATE_TASK, FILTER_TASK, TOGGLE_TASK } from '../Constants/Ac
 
 const initialState = {
     tasks: [], // Correction : tasks doit être directement dans initialState, pas dans un tableau
-    filter: 'All'
+    filter: 'ALL'
 };
 
 const Reducers = (state = initialState, action) => {
@@ -21,9 +21,12 @@ const Reducers = (state = initialState, action) => {
             return {
                 ...state,
                 tasks: state.tasks.map(task =>
-                    task.id === action.payload.id ? { ...task, description: action.payload.description } : task
+                    task.id === action.payload.id 
+                        ? { ...task, nom: action.payload.nom, description: action.payload.description }
+                        : task
                 )
             };
+            
         case FILTER_TASK:
             return {
                 ...state,

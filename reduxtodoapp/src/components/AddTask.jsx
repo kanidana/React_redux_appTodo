@@ -34,7 +34,7 @@ const AddTask = () => {
                     id='description' 
                     onChange={e => setDescription(e.target.value)} 
                     required 
-                />
+                /><br/>
                 <button>Ajouter</button>
             </form>
         </div>
